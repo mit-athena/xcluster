@@ -1,10 +1,15 @@
 #!/usr/bin/make -f
 
-DEB_AUTO_UPDATE_AUTOCONF = 2.50
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/autotools.mk
+%:
+	dh $@ --with autoreconf
 
-DEB_CONFIGURE_EXTRA_FLAGS += --with-hesiod
+override_dh_auto_configure:
+	automake --add-missing --foreign || true
+	dh_auto_configure -- --with-hesiod
 
-clean::
-	rm -f configure
+# For reasons I was unable to ascertain, dh_auto_test
+# tries to build check.c as a standalone file, even
+# though 'make check' is empty and even when it is
+# removed.
+override_dh_auto_test:
+	true

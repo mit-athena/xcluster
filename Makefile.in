@@ -4,6 +4,7 @@ SHELL=/bin/sh
 VPATH=@srcdir@
 INSTALL=@INSTALL@
 INSTALL_PROGRAM=@INSTALL_PROGRAM@
+MKDIR_P=@MKDIR_P@
 srcdir=@srcdir@
 top_srcdir=@top_srcdir@
 prefix=@prefix@
@@ -46,9 +47,9 @@ cview: ${COBJS}
 check:
 
 install:
-	${top_srcdir}/mkinstalldirs ${DESTDIR}${bindir}
-	${top_srcdir}/mkinstalldirs ${DESTDIR}${mandir}/man1
-	${top_srcdir}/mkinstalldirs ${DESTDIR}${appdefsdir}
+	${MKDIR_P} ${DESTDIR}${bindir}
+	${MKDIR_P} ${DESTDIR}${mandir}/man1
+	${MKDIR_P} ${DESTDIR}${appdefsdir}
 	${INSTALL_PROGRAM} xcluster ${DESTDIR}${bindir}
 	${INSTALL_PROGRAM} cview ${DESTDIR}${bindir}
 	${INSTALL} -m 444 ${srcdir}/xcluster.1 ${DESTDIR}${mandir}/man1

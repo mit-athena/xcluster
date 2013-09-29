@@ -2,7 +2,7 @@ Source: debathena-xcluster
 Section: debathena/net
 Priority: extra
 Maintainer: Debathena Project <debathena@mit.edu>
-Build-Depends: cdbs, debhelper, dh-buildinfo, autoconf, libhesiod-dev, debathena-libxj-dev, libx11-dev, libxmu-dev
+Build-Depends: debhelper (>= 7.0.50~), dh-autoreconf, debathena-aclocal, libhesiod-dev, debathena-libxj-dev, libx11-dev, libxmu-dev
 Standards-Version: 3.9.3
 
 Package: debathena-xcluster
