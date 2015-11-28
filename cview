@@ -1,0 +1,5 @@
+#!/bin/sh
+
+CVIEW_SERVER="$(hesinfo cview sloc)"
+
+echo "$@" | nc "$CVIEW_SERVER" 3704
