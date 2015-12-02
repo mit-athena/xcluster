@@ -1,3 +1,9 @@
+debathena-xcluster (10.1.0-0debathena1) unstable; urgency=medium
+
+  * Replace old C-based version with shell and netcat.
+
+ -- Victor Vasiliev <vasilvv@mit.edu>  Wed, 02 Dec 2015 01:14:47 -0500
+
 debathena-xcluster (10.0.1-0debathena1) unstable; urgency=low
 
   [ Jonathan Reed ]
